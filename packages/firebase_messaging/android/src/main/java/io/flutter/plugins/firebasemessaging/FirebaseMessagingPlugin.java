@@ -173,10 +173,9 @@ public class FirebaseMessagingPlugin extends BroadcastReceiver
         Log.e(TAG, "There was an exception when getting callback handle from Dart side");
         e.printStackTrace();
       }
-      FlutterFirebaseMessagingService.setBackgroundSetupHandle(mainActivity, setupCallbackHandle);
-      FlutterFirebaseMessagingService.startBackgroundIsolate(mainActivity, setupCallbackHandle);
-      FlutterFirebaseMessagingService.setBackgroundMessageHandle(
-          mainActivity, backgroundMessageHandle);
+      FlutterFirebaseMessagingService.setBackgroundSetupHandle(applicationContext, setupCallbackHandle);
+      FlutterFirebaseMessagingService.startBackgroundIsolate(applicationContext, setupCallbackHandle);
+      FlutterFirebaseMessagingService.setBackgroundMessageHandle(applicationContext, backgroundMessageHandle);
       result.success(true);
     } else if ("FcmDartService#initialized".equals(call.method)) {
       FlutterFirebaseMessagingService.onInitialized();
