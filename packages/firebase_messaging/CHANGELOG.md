@@ -1,12 +1,21 @@
-## 6.1.0
-* Implement `UNUserNotificationCenterDelegate` methods to allow plugin to work when method swizzling is disabled
-* **Breaking change** Applications now only need to their iOS project's `AppDelegate` when method swizzling is disabled
-* **Breaking change** Applications that need to use `firebase_messaging` with other notification plugins will
-  will need to add the following to their iOS project's `Info.plist` file
+## 6.0.13
+
+* Implement `UNUserNotificationCenterDelegate` methods to allow plugin to work when method swizzling is disabled.
+* Applications now only need to update their iOS project's `AppDelegate` when method swizzling is disabled.
+* Applications that need to use `firebase_messaging` with other notification plugins will need to
+  add the following to their iOS project's `Info.plist` file:
   ```xml
   <key>FirebaseAppDelegateProxyEnabled</key>
   <false/>
   ```
+
+## 6.0.12
+
+* Replace deprecated `getFlutterEngine` call on Android.
+
+## 6.0.11
+
+* Make the pedantic dev_dependency explicit.
 
 ## 6.0.10
 
